@@ -1,14 +1,14 @@
-[
-  {
-    "fname": "John",
-    "email": "john@gmail.com",
-    "lname": "snow",
-    "password": 123456
-  },
-  {
-    "fname": "divesh",
-    "email": "divesh@gmail.com",
-    "lname": "rajput",
-    "password": 456321
-  }
+[{
+    "fname":"mike",
+    "email":"mike@gmail.com",
+    "lname":"snow",
+    "password":123456
+},
+    {
+        "fname":"Ben",
+    "email":"Ben@gmail.com",
+    "lname":"stokes",
+    "password":456321
+    }
+
 ]

@@ -5,35 +5,17 @@ const hostname = "127.0.0.1";
 
 const port = 3000;
 
-
-
-const x = (data) => {
+const dataReq = (data) => {
   const b = new Buffer.from(data, "utf-8").toString();
-  fs.writeFile("employee.json", b, function (err) {
-    if (err) {
-      console.log(err);
-    } else {
+  fs.writeFile("employee.json", b, async () => {
+    try {
+      await fs.promises.writeFile("employee.json", b, "utf8");
       console.log("data entered successfully");
+    } catch (err) {
+      console.error("Error occurred while reading directory!", err);
     }
   });
 };
-
-
-
-
-
-const y = (data) => {
-  const b = new Buffer.from(data, "utf-8").toString();
-  fs.writeFile("employee.json", b, function (err) {
-    if (err) {
-      console.log(err);
-    } else {
-      console.log("data entered successfully");
-    }
-  });
-};
-
-const z = (data) => console.log(data);
 
 const server = http.createServer((req, res) => {
   res.statusCode = 200;
@@ -41,26 +23,28 @@ const server = http.createServer((req, res) => {
   console.log(req.method, "-->");
 
   if (req.method === "GET") {
+    req.on("data", dataReq);
     res.end("get method");
-    req.on("data", x);
     return;
   }
   if (req.method === "POST") {
+    req.on("data", dataReq);
     res.end("post method ");
-    req.on("data", y);
     return;
   }
   if (req.method === "PUT") {
     res.end("put method ");
-    req.on("data", z);
+
     return;
   }
   if (req.method === "DELETE") {
     res.end("delete method ");
     return;
+  } else {
+    res.statusCode = 400;
+    console.log("error");
+    res.end("400 not found");
   }
-
-  res.end("hello world");
 });
 
 server.listen(port, hostname, () => {
