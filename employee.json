@@ -1,26 +1,14 @@
-[{
-    "fname":"John",
-    "email":"john@gmail.com",
-    "lname":"snow",
-    "password":123456
-},
-    {
-        "fname":"divesh",
-    "email":"divesh@gmail.com",
-    "lname":"rajput",
-    "password":456321
-    },
-    {
-        "fname":"divesh",
-    "email":"divesh@gmail.com",
-    "lname":"rajput",
-    "password":456321
-    },
-    {
-        "fname":"divesh",
-    "email":"divesh@gmail.com",
-    "lname":"rajput",
-    "password":456321
-    }
-
+[
+  {
+    "fname": "John",
+    "email": "john@gmail.com",
+    "lname": "snow",
+    "password": 123456
+  },
+  {
+    "fname": "divesh",
+    "email": "divesh@gmail.com",
+    "lname": "rajput",
+    "password": 456321
+  }
 ]
